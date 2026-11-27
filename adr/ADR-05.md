@@ -1,6 +1,6 @@
-# ADR-05 · Preprocesamiento: luz y ruido
+# ADR-05 · B1 · Filtros de luz y ruido
 
-**Responsable:** Daniel Pacheco
+**Responsable:** Fernando Sánchez
 **Estado:** pendiente
 
 ## Contexto

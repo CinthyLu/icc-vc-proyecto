@@ -2,7 +2,7 @@
 
 Sistema de visión por computador que localiza y recorta cada fruta en fotos de percha de supermercado, como base para reconocer el producto.
 
-**Equipo:** Cinthya Ramón · Sebastián Alvarado · Daniel Pacheco · Fernando Sánchez
+**Equipo:**  Sebastián Alvarado · Daniel Pacheco ·  Cinthya Ramón · Fernando Sánchez
 
 ## Estructura
 
@@ -10,41 +10,52 @@ Sistema de visión por computador que localiza y recorta cada fruta en fotos de 
 vc-frutas-percha/
 ├── README.md
 ├── requirements.txt
-├── docs/                 # spike e instrucciones del equipo
-├── adr/                  # una decisión por fase (ADR-01 … ADR-07)
-├── notebooks/            # un cuaderno por fase (.ipynb y .html)
-├── src/utils.py          # funciones compartidas (leer, mostrar, dice_iou)
-├── figuras/fase1 … fase7 # figuras que genera cada cuaderno
-├── resultados/           # tablas .csv de cada experimento
+├── docs/
+├── adr/
+├── notebooks/
+├── src/utils.py
+├── figuras/
+├── resultados/
 └── data/
-    ├── raw/              # fotos originales (NO se suben: van por Drive)
-    ├── anotaciones/      # máscaras PNG de evaluación (sí se suben)
-    └── procesada/        # salidas del pipeline (NO se suben)
+    ├── raw/
+    ├── anotaciones/
+    └── procesada/
 ```
+
+| Carpeta | Contenido |
+| --- | --- |
+| `docs/` | Spike del proyecto |
+| `adr/` | Registros de decisión ADR-01 a ADR-07 |
+| `notebooks/` | Cuadernos por fase (.ipynb y .html) |
+| `src/utils.py` | Funciones compartidas: `leer`, `mostrar`, `dice_iou` |
+| `figuras/` | Figuras de cada fase (`a1`, `a2`, `b1`, `b2`) |
+| `resultados/` | Tablas .csv de los experimentos |
+| `data/raw/` | Fotos originales, en Drive |
+| `data/anotaciones/` | Máscaras PNG de evaluación |
+| `data/procesada/` | Salidas del pipeline |
 
 ## Fases
 
-| Fase | Cuaderno | Responsable | Decisión |
-|---|---|---|---|
-| 1 · Completar el dataset | `notebooks/fase1_dataset.ipynb` | Sebastián | [ADR-01](adr/ADR-01.md) |
-| 2 · Control de calidad y limpieza | `notebooks/fase2_calidad.ipynb` | Sebastián | [ADR-02](adr/ADR-02.md) |
-| 3 · Tamaño de trabajo | `notebooks/fase3_tamano.ipynb` | Fernando | [ADR-03](adr/ADR-03.md) |
-| 4 · Espacio de color | `notebooks/fase4_color.ipynb` | Fernando | [ADR-04](adr/ADR-04.md) |
-| 5 · Luz y ruido | `notebooks/fase5_preprocesamiento.ipynb` | Daniel | [ADR-05](adr/ADR-05.md) |
-| 6 · Segmentación clásica | `notebooks/fase6_segmentacion.ipynb` | Cinthya | [ADR-06](adr/ADR-06.md) |
-| 7 · División y augmentation | `notebooks/fase7_division_augmentation.ipynb` | Daniel | [ADR-07](adr/ADR-07.md) |
+Hito inicial conjunto: 88 fotos de mango, manzana y banano, y 24 máscaras de evaluación. Después, dos frentes en paralelo.
 
-Cada fase usa lo que decidió la ADR de la fase anterior.
+| Frente | Fase | Cuaderno | Responsable | ADR |
+| --- | --- | --- | --- | --- |
+| A · Datos | A1 · Inventario y control de calidad | `notebooks/a1_calidad.ipynb` | Sebastián Alvarado | [ADR-01](adr/ADR-01.md), [ADR-02](adr/ADR-02.md) |
+| A · Datos | A2 · División y data augmentation | `notebooks/a2_division_augmentation.ipynb` | Daniel Pacheco | [ADR-07](adr/ADR-07.md) |
+| B · Segmentación | B1 · Tamaño, color y filtros de luz y ruido | `notebooks/b1_preprocesamiento.ipynb` | Fernando Sánchez | [ADR-03](adr/ADR-03.md), [ADR-04](adr/ADR-04.md), [ADR-05](adr/ADR-05.md) |
+| B · Segmentación | B2 · Segmentación clásica y recorte | `notebooks/b2_segmentacion.ipynb` | Cinthya Ramón | [ADR-06](adr/ADR-06.md) |
 
-## Cómo trabajar
+Diseño experimental: [docs/SPIKE.md](docs/SPIKE.md)
 
-1. Clonar el repo y crear tu rama: `git checkout -b <tu-nombre>`
-2. Descargar las fotos de Drive en `data/raw/` (esa carpeta no se sube).
+## Flujo de trabajo
+
+1. Clonar el repositorio y crear una rama propia: `git checkout -b <nombre>`
+2. Descargar las fotos de Drive en `data/raw/`.
 3. Instalar dependencias: `pip install -r requirements.txt`
-4. Trabajar solo en tu cuaderno y tu ADR.
-5. Subir tu rama y abrir un Pull Request a `main`. Cinthya revisa y fusiona.
+4. Trabajar en el cuaderno y la ADR asignados.
+5. Subir la rama y abrir un Pull Request a `main`.
 
 ## Datos
 
-- Fotos propias y datasets públicos: carpeta compartida de Drive (enlace en `data/README.md`).
-- Nombre de fotos propias: `clase_estado_persona_fecha_numero.jpg`
+- Fotos propias y datasets públicos en Drive ([data/README.md](data/README.md)).
+- Formato de nombre de las fotos propias: `clase_estado_persona_fecha_numero.jpg`

@@ -1,4 +1,4 @@
-# ADR-01 · Completar el dataset
+# ADR-01 · A1 · Inventario
 
 **Responsable:** Sebastián Alvarado
 **Estado:** pendiente

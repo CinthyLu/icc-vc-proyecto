@@ -1,4 +1,4 @@
-# ADR-03 · Tamaño de trabajo
+# ADR-03 · B1 · Tamaño de trabajo
 
 **Responsable:** Fernando Sánchez
 **Estado:** pendiente

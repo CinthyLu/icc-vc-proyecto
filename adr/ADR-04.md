@@ -1,4 +1,4 @@
-# ADR-04 · Representación y espacio de color
+# ADR-04 · B1 · Espacio de color
 
 **Responsable:** Fernando Sánchez
 **Estado:** pendiente

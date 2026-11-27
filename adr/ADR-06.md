@@ -1,4 +1,4 @@
-# ADR-06 · Segmentación clásica
+# ADR-06 · B2 · Segmentación clásica y recorte
 
 **Responsable:** Cinthya Ramón
 **Estado:** pendiente

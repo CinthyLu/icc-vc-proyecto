@@ -1,4 +1,4 @@
-# ADR-07 · División y data augmentation
+# ADR-07 · A2 · División y data augmentation
 
 **Responsable:** Daniel Pacheco
 **Estado:** pendiente
